@@ -1,13 +1,17 @@
-package com.javaex.oop.point.v3;
+package com.javaex.oop.point.v4;
 
-// v3 오버로딩
+// v4. 상속
 public class Point {
-	private int x;
-	private int y;
+	protected int x = 100;
+	protected int y = 100;
 	
 	// 기본 생성자 : 매개 변수가 없는 생성자
+//	public Point() {
+//		
+//	}
+	
 	public Point() {
-		
+		// TODO Auto-generated constructor stub
 	}
 	
 	// 전체 필드 초기화 생성자
@@ -17,6 +21,9 @@ public class Point {
 	}
 	
 	
+
+
+
 	public int getX() {
 		return x;
 	}
@@ -35,7 +42,7 @@ public class Point {
 	}
 	
 	// 메소드 오버로딩
-	// 매개변수 타입, 갯수, 순서가 다른 같은 이름의
+	// 매개변수 타입, 갯수, 순서가 같인 이름의
 	// 메서드를 중복선언
 	public void draw(boolean bDraw) {
 		String message = String.format("점[x=%d, y=%d]을 ",x,y);
