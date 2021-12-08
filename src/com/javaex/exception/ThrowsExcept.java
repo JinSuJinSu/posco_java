@@ -32,9 +32,9 @@ public class ThrowsExcept {
 	}
 	
 	// Uncheked Exception
-	public void executeRuntimException() {
+	public void executeRuntimException() throws RuntimeException{
 		System.out.println("런타임 오류");
-		throw new RuntimeException();
+		throw new RuntimeException("런타임 오류 발생");
 	}
 	
 	public double divide(int num1, int num2) {

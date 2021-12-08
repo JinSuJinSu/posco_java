@@ -1,8 +1,8 @@
 package com.javaex.api.objectclass.v4;
 
 
-// v3. 얕은 복사
-// 객체의 필드데이터를 단순 복제
+// v4. 깊은 복사
+// 객체의 필드데이터를 확실하게 복제
 public class Point implements Cloneable{
 	private int x;
 	private int y;

@@ -7,6 +7,8 @@ public class StringEx {
 //		stringEx();
 		stringFormatEx();
 
+
+
 	}
 	
 	private static void stringFormatEx() {
@@ -38,5 +40,7 @@ public class StringEx {
 		System.out.println("str1과 str3의 값은 같은가?? " + str1.equals(str3));
 		
 	}
+	
+
 
 }
