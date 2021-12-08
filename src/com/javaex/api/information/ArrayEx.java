@@ -2,6 +2,7 @@ package com.javaex.api.information;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ArrayEx {
 	
@@ -39,9 +40,11 @@ public class ArrayEx {
 		Arrays.sort(members, new Comparator<Member>() {
 			@Override
 			public int compare(Member o1, Member o2) {
-				return o1.name.compareTo(o2.name)
+				return o1.name.compareTo(o2.name);
 			}
-		};
+		});
+		System.out.println("역순정렬:" +
+				Arrays.toString(members));
 		
 		
 	}
