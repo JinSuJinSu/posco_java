@@ -9,10 +9,10 @@ public class Types {
 //		promotionEX();
 		castingEX();
 	}
-	// 형 변환(Casting)
+	// �삎 蹂��솚(Casting)
 	private static void castingEX() {
-		// 표현 범위가 넓은 자료 -> 표현 범위 좁은 자료
-		// 명시적으로 변환해줘야
+		// �몴�쁽 踰붿쐞媛� �꼻�� �옄猷� -> �몴�쁽 踰붿쐞 醫곸� �옄猷�
+		// 紐낆떆�쟻�쑝濡� 蹂��솚�빐以섏빞
 		float f = 123.456f;
 		System.out.println(f);
 		
@@ -25,30 +25,30 @@ public class Types {
 		short s = (short)i2;
 		System.out.println(Integer.toBinaryString(s));
 		
-		// 형 변환시 자료 유실이 일어날 수 있으므로 반드시 주의해야 한다.
+		// �삎 蹂��솚�떆 �옄猷� �쑀�떎�씠 �씪�뼱�궇 �닔 �엳�쑝誘�濡� 諛섎뱶�떆 二쇱쓽�빐�빞 �븳�떎.
 		
 	}
-	// 형 변환(Promotion)
+	// �삎 蹂��솚(Promotion)
 	private static void promotionEX() {
-		// 표현 범위 좁은 자료 -> 표현 범위 넓은 자료
-		// 자동으로 변환
-		byte b = 25; //1바이트 정수
+		// �몴�쁽 踰붿쐞 醫곸� �옄猷� -> �몴�쁽 踰붿쐞 �꼻�� �옄猷�
+		// �옄�룞�쑝濡� 蹂��솚
+		byte b = 25; //1諛붿씠�듃 �젙�닔
 		System.out.println(b);
 		
-	    short s = b; // 2바이트 정수
+	    short s = b; // 2諛붿씠�듃 �젙�닔
 	    System.out.println(s);
 	    
-	    int i = s; //4바이트 정수
+	    int i = s; //4諛붿씠�듃 �젙�닔
 	    System.out.println(i);
 	    
-	    float f = i; // 4바이트 실수
+	    float f = i; // 4諛붿씠�듃 �떎�닔
 	    System.out.println(f);
 	}
 	
-	// 논리형 : 참 or 거짓
+	// �끉由ы삎 : 李� or 嫄곗쭞
 	private static void boolenEx() {
-		boolean b1 = true; // 참
-		boolean b2 = false; // 거짓
+		boolean b1 = true; // 李�
+		boolean b2 = false; // 嫄곗쭞
 		
 		System.out.println(b1);
 		System.out.println(b2);
@@ -58,25 +58,25 @@ public class Types {
 		int var1 = 3;
 		int var2 = 5;
 		
-		result = var1 < var2; // 비교 연산 or 논리 연산 결과
+		result = var1 < var2; // 鍮꾧탳 �뿰�궛 or �끉由� �뿰�궛 寃곌낵
 		System.out.println(var1 + "<" + var2 + "=" + result);
 		
 		
 	}
 	
-	// 문자형 타입 : 부호 없는 정수(2바이트 : 코드)
+	// 臾몄옄�삎 ���엯 : 遺��샇 �뾾�뒗 �젙�닔(2諛붿씠�듃 : 肄붾뱶)
 	private static void charEx() {
 		char ch1 = 'A';
-		char ch2 = '한';
+		char ch2 = 'B';
 		
 		System.out.println(ch1);
 		System.out.println(ch2);
 		
-		// ch1 4글자 뒤
+		// ch1 4湲��옄 �뮘
 		System.out.println((char)(ch1 + 4));
 	}
 	
-	// 실수형 타입
+	// �떎�닔�삎 ���엯
 	private static void floatDoubleEx() {
 		// flolat(4) < double(8)
 		
@@ -88,31 +88,31 @@ public class Types {
 		
 		System.out.println("float:" + floatVar);
 		System.out.println("double:" + doubleVar);
-		// 정밀도 포기, 표현 범위 넓힌 것
+		// �젙諛��룄 �룷湲�, �몴�쁽 踰붿쐞 �꼻�엺 寃�
 		System.out.println(0.1 * 3);
 		
-		// 지수 표기법(e)
+		// 吏��닔 �몴湲곕쾿(e)
 		floatVar = 3E-6F; // 3 * 10^-6
 		System.out.println(floatVar);
 	}
-	// 정수형 타입
+	// �젙�닔�삎 ���엯
 	public static void intLongEx() {
 		// byte(1) < short(2) < int(4:default) < long(8);
-		int intVar1; // 선언
-		int intVar2; // 선언
+		int intVar1; // �꽑�뼵
+		int intVar2; // �꽑�뼵
 		
-		intVar1 = 2021; // 초기화
-//		intVar2  = 12345678901234; 범위 초과여서 에러난다.
+		intVar1 = 2021; // 珥덇린�솕
+//		intVar2  = 12345678901234; 踰붿쐞 珥덇낵�뿬�꽌 �뿉�윭�궃�떎.
 	    System.out.println(intVar1);
 	    
-	    long logVar1 = 2021; // 선언 + 초기화
-	    long logVar2 = 12345678901234L;// L or l을 옆에 적어준다.
+	    long logVar1 = 2021; // �꽑�뼵 + 珥덇린�솕
+	    long logVar2 = 12345678901234L;// L or l�쓣 �쁿�뿉 �쟻�뼱以��떎.
 	    
-	    // 2진수, 8진수, 16진수
+	    // 2吏꾩닔, 8吏꾩닔, 16吏꾩닔
 	    int bin, oct, hex;
-	    bin = 0b1101;  // 2진수 0b
-	    oct = 072;     // 8진수 0
-	    hex = 0xFF;    // 16진수 0x
+	    bin = 0b1101;  // 2吏꾩닔 0b
+	    oct = 072;     // 8吏꾩닔 0
+	    hex = 0xFF;    // 16吏꾩닔 0x
 	    
 	    System.out.println(bin);
 	    System.out.println(oct);
