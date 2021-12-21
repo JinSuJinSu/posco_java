@@ -51,7 +51,7 @@ public class SelectEmpLab {
 				System.out.println(rs.getString("ename") + " 직원은 " +
 						 rs.getString("year(hiredate)") + "년 " + rs.getString("month(hiredate)") + "월 " + 
 						 rs.getString("day(hiredate)") + "일에 입사하였습니다.");
-				//data_format(hiredate,%Y년 %m월 %d일) as date
+				//date_format(hiredate,\"%Y년 %m월 %d일\") as date
 				// rs.getString("date");
 			}
 				

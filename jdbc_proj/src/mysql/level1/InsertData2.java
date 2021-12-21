@@ -11,7 +11,7 @@ public class InsertData2 {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("ÇØ´ç Å¬·¡½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù." + cnfe.getMessage());
+			System.out.println("í•´ë‹¹ í´ë˜ìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." + cnfe.getMessage());
 			return;
 		} 
 		String url = "jdbc:mysql://localhost:3306/jdbcdb?characterEncoding=UTF-8&serverTimezone=UTC";
@@ -21,20 +21,20 @@ public class InsertData2 {
 				PreparedStatement pstmt = conn.prepareStatement("insert into student values (?, ?)");
 				Scanner scan = new Scanner(System.in);){
 			while(true) {
-				System.out.print("ÇĞ»ı ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+				System.out.print("í•™ìƒ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 				String name = scan.nextLine();
-				System.out.print("ÇĞ»ı Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+				System.out.print("í•™ìƒ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 				int score = Integer.parseInt(scan.nextLine());
 				pstmt.setString(1,  name);
 				pstmt.setInt(2, score);
 				pstmt.executeUpdate();
-				System.out.println("student Å×ÀÌºí¿¡ µ¥ÀÌÅÍ »ğÀÔ ¿Ï·á");
-				System.out.print("°è¼Ó ÀÔ·ÂÇÏ°Ú½À´Ï±î?(y/n)");
+				System.out.println("student í…Œì´ë¸”ì— ë°ì´í„° ì‚½ì… ì™„ë£Œ");
+				System.out.print("ê³„ì† ì…ë ¥í•˜ê² ìŠµë‹ˆê¹Œ?(y/n)");
 				String aws = scan.nextLine();
 				if (aws.equalsIgnoreCase("y")) {
 					continue;
 				} 
-				System.out.println("student Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ÀÛ¾÷ Á¾·á");
+				System.out.println("student í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì‘ì—… ì¢…ë£Œ");
 				break;
 			}
 		} catch (SQLException se) {

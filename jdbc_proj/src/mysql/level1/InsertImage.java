@@ -28,7 +28,7 @@ public class InsertImage {
 				System.out.println(imgFile.getName().substring(0, pointIndex));
 				FileInputStream fin = new FileInputStream(imgFile); 
 				pstmt.setString(1, imgName); 
-				pstmt.setBinaryStream(2, fin, (int)imgFile.length());
+				pstmt.setBinaryStream(2, fin, (int)imgFile.length()); // 이미지 파일 전체를 불러와야 된다.
 				pstmt.executeUpdate(); 
 				System.out.println("이미지 삽입 성공");
 			} else {

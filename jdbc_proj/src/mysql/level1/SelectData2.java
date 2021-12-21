@@ -24,7 +24,9 @@ public class SelectData2 {
 		    System.out.print("학생 이름을 입력하세요 : ");
 		    String name = scan.nextLine();
 		    pstmt.setString(1, name);
-			ResultSet rs = pstmt.executeQuery();
+			ResultSet rs = pstmt.executeQuery(); 
+			// select로 불러온 데이터가 전혀 없어도 rs 객체는 빈 상태로 만들어진다.
+			// 단 rs.next()를 수행했을 때 바로 false가 나온다.
 			if(rs.next()) 
 				System.out.println(name + "학생의 점수 : " + rs.getInt("score"));
 			 else 			

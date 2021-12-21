@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TableCreate {
+public class InsertDataLab {
+
 	public static void main(String[] args) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -22,19 +23,26 @@ public class TableCreate {
 			conn = DriverManager.getConnection(url, user, passwd);	
 			System.out.println("데이터베이스에 접속했습니다.");
 			stmt = conn.createStatement();		
-			stmt.executeUpdate("create table student (name varchar(10), score int)");
-			System.out.println("student 테이블 생성");						
+			stmt.executeUpdate("insert into meeting (name, title, meetingdate) values "
+					+ "('둘리', '자바 공부', now())");
+			stmt.executeUpdate("insert into meeting (name, title, meetingdate) values "
+					+ "('또치', '영화 보기', '2021-12-25 12:00')");
+			stmt.executeUpdate("insert into meeting (name, title, meetingdate) values "
+					+ "('도우너', 'PC방', '2022-01-01')");
+	
+			System.out.println("meeting 테이블에 데이터 삽입 완료");						
 		} catch (SQLException se1) {
 			System.out.println(se1.getMessage());
 		} finally {
 			try {
-				if(stmt!=null) // 더 확실하게 짜기 위한 코드
+				if(stmt!=null)
 				stmt.close();
-				if(conn!=null) // 더 확실하게 짜기 위한 코드
+				if(conn!=null)
 				conn.close();
 			} catch (SQLException se2) {
 				System.out.println(se2.getMessage());
 			}
 		}
 	}
+
 }

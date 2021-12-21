@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class SelectData1 {
+public class SelectDataLab {
+
 	public static void main(String[] args) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -19,9 +20,13 @@ public class SelectData1 {
 		String passwd = "1234";
 		try (Connection conn = DriverManager.getConnection(url, user, passwd);
 			Statement stmt = conn.createStatement()){
-			ResultSet rs = stmt.executeQuery("select * from student");
+			ResultSet rs = stmt.executeQuery("select id, name, title, "
+					+ "date_format(meetingdate,\"%Y년 %c월 %e일 %H시 %i분\") as date from meeting");
 			while(rs.next()) {
-				System.out.println(rs.getString("name")+"학생은 "+rs.getInt("score")+"점 입니다.");
+				System.out.println("[id가 " + rs.getInt("id") + "인 친구]");
+				System.out.println("친구이름 : " + rs.getString("name"));
+				System.out.println("미팅목적 : " + rs.getString("title"));
+				System.out.println("미팅시간 : " + rs.getString("date"));
 			}				
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
@@ -29,4 +34,5 @@ public class SelectData1 {
 		// try catch with 리소스 구문
 		// try 안에 변수 선언 후 객체를 생성해서 대입시킬 수 있다. 이럴 경우 자동으로 close 가능
 	}
+
 }

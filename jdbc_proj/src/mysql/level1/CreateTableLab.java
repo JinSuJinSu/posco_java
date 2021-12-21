@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TableCreate {
+public class CreateTableLab {
+
 	public static void main(String[] args) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -22,8 +23,11 @@ public class TableCreate {
 			conn = DriverManager.getConnection(url, user, passwd);	
 			System.out.println("데이터베이스에 접속했습니다.");
 			stmt = conn.createStatement();		
-			stmt.executeUpdate("create table student (name varchar(10), score int)");
-			System.out.println("student 테이블 생성");						
+			stmt.executeUpdate("create table meeting (id int primary key auto_increment, "
+					+ "name varchar(18), title varchar(120),meetingdate datetime)");
+
+			
+			System.out.println("meeting 테이블 생성");						
 		} catch (SQLException se1) {
 			System.out.println(se1.getMessage());
 		} finally {
@@ -37,4 +41,5 @@ public class TableCreate {
 			}
 		}
 	}
+
 }
