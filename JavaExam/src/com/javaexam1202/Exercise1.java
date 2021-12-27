@@ -17,7 +17,6 @@ public class Exercise1 {
 	   int num1 = 10, num2 = 25, num3 = 33;
 	   System.out.println("합계 : " + (num1 + num2 + num3));
 	   System.out.println("평균 : " + (num1 + num2 + num3)/3);
-	   System.out.println("'%'");
 }
 
 }
